@@ -1,0 +1,3 @@
+TRUNCATE
+  exercise_plan
+  RESTART IDENTITY CASCADE;

@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const dashboardService = require('./dashboard-service');
 const xss = require('xss');
+const {requireAuth} = require('../middleware/jwt_auth')
+
 router.use(express.json());
+
 
 const serializeExercise = (exercise) => ({
   id: exercise.id,
@@ -23,7 +26,12 @@ const serializeExercise = (exercise) => ({
 router
   .route('/')
   .get((req, res, next) => {
-    dashboardService.getAllExercises(req.app.get('db'))
+    
+    //console.log('this is here:', req.query);
+    //let {exercise_priority, equipment_value, } = req.query;
+
+    dashboardService.getAllExercises(req.app.get('db'))//, {gain_strength: true})
+    
       .then(exercises => {
         res.json(exercises.map(serializeExercise));
       })
@@ -32,6 +40,7 @@ router
 
 router
   .route('/:id')
+  .all(requireAuth)
   .all((req, res, next) => {
     dashboardService.getExerciseById(req.app.get('db'), req.params.id)
       .then(exercise => {

@@ -1,0 +1,85 @@
+BEGIN;
+
+TRUNCATE
+  exercises
+  RESTART IDENTITY CASCADE;
+
+INSERT INTO exercises (exercise_name, target, exercise_priority, equipment_value, 
+exercise_description, instructions, link, lose_weight, gain_muscle, gain_strength, endurance)
+VALUES
+('Tri-plane lunges (weighted)', 'Warmup', 1, 3, 'A simple lunge exercise that functions as a warm up exercise as well as an endurance exercise.','Stand with your feet hip-width apart, keep your back straight, your shoulders back and your abs tight. Take a step forward and slowly bend both knees, until your back knee is just above the floor. Stand back up and repeat the movement. Alternate legs until set is complete. Perform in all three directions.', 'https://www.youtube.com/embed/5DfCBBPgxE0', true, true, true, true),
+('Tri-plane lunges', 'Warmup', 1, 1, 'A simple lunge exercise that functions as a warm up exercise as well as an endurance exercise.','Stand with your feet hip-width apart, keep your back straight, your shoulders back and your abs tight. Take a step forward and slowly bend both knees, until your back knee is just above the floor. Stand back up and repeat the movement. Alternate legs until set is complete. Perform in all three directions.', 'https://www.youtube.com/embed/qm5D40RTSQk', true, true, true, true),
+('Scissor hops', 'Warmup', 3, 1, 'A simple warm up exercise', 'Jump while performing scissor like motions with your legs', 'https://www.youtube.com/embed/QrBOCqscdwc', true, false, false, true ),
+('Barbell Squats', 'Lowerbody', 1, 3, 'An intense leg exercise ', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/Dy28eq2PjcM', true, true, true, true),
+('Barbell Hip Thrusts', 'Lowerbody', 1, 3, 'An intense exercise isolating the glute muscles strength and function', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/Zp26q4BY5HE', true, true, true, true),
+('Barbell Reverse Lunges', 'Lowerbody', 1, 3, 'A great exercise for your legs', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/R-g5yPNYv2k', true, true, true, true ),
+('Alternate Single Leg Box Squat', 'Lowerbody', 2, 1, 'A great leg exercise', 'Watch video for instructions.', 'https://www.youtube.com/embed/uJ4eA2wUXdw', true, true, true, true ),
+('1 1/2 Bottomed Out squats', 'Lowerbody', 1, 1, 'A great leg exercise that strengthens them in their weakest spot', 'Watch video for instructions.', 'https://www.youtube.com/embed/T8TeqgiwM-o', true, true, true, true ),
+('Jump Squats', 'Lowerbody', 1, 1, 'A intense endurance exercise for the lower body.', 'Perform a Squat to jump motion, making sure to land softly.', 'https://www.youtube.com/embed/0LGJZqKfpXs', true, true, true, true ),
+('Assisted Pistol Squats', 'Lowerbody', 1, 1, 'Pistol Squats using a chair, bedsheet / door, or any other sturdy fixture', 'Watch video for instructions.', 'https://www.youtube.com/embed/un5Wbnczt9s', true, true, true, true ),
+('Bulgarian Split Squats with chair', 'Lowerbody', 3, 1, 'An intense exercise for your legs', 'Watch video for instructions', 'https://www.youtube.com/embed/T--Sg-g0vnw', true, true, true, true ),
+('Step Downs', 'Lowerbody', 3, 1, 'A step exercise that is harder than it looks!', 'When stepping down make sure to hing at the hips and keep your knee above your toes.', 'https://www.youtube.com/embed/vXMB-9Yb9V4', true, true, true, true ),
+('Bench Press', 'Upperbody', 1, 3, 'An intense chest exercise', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/gRVjAtPip0Y', false, true, true, false),
+('Barbell Overhead Press', 'Upperbody', 1, 3, 'A great exercise for your shoulders and upper body', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/F3QY5vMz_6I', false, true, true, false ),
+('Incline Bench Press', 'Upperbody', 2, 3, 'A great exercise for the upper chest muscles', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/jPLdzuHckI8', false, true, true, false ),
+('Resistence Band Chest Fly', 'Upperbody', 2, 2, 'A great exercise for chest muuscle isolation.', 'Watch video for instructions.', 'https://www.youtube.com/embed/yVcEkvgymt8', false, true, true, false ),
+('Power Push Aways', 'Upperbody', 2, 1, 'A great exercise for shoulder muscles', 'Watch video for instructions.', 'https://www.youtube.com/embed/u5FgbAVFEh0', true, true, true, false ),
+('Rotational Pushups', 'Upperbody', 2, 1, 'A great upperbody and core exercise.', 'Watch video for instructions.', 'https://www.youtube.com/embed/SIXuGSOL3_8', false, true, true, true ),
+('Daimond Pushups', 'Upperbody', 1, 1, 'A push up variation that incorporates more tricep activation', 'Perform push ups with a narrow hand placement forming your fingers into a diamond.', 'https://www.youtube.com/embed/kGhDnFwMY3E', false, true, true, true ),
+('Pike Push Ups', 'Upperbody', 3, 1, 'An intense upper body exercise.', 'Watch video for instructions.', 'https://www.youtube.com/embed/HT4G-uWcVcc', false, true, true, true ),
+('Push Ups With Shoulder Raise', 'Upperbody', 1,1,'A more advanced push up that adds shoulder isolation.','Perform a classic push up and at the top point raise one arm up straight to shoulder level. repeat with other arm on next push up and repeat.','https://www.youtube.com/embed/ZOqYv0Z5CuA',true, true, true, true),
+('Chin Ups' , 'Back', 1, 3, 'An intense back and arm exercise', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/brhRXlOhsAM', true, true, true, true ),
+('Barbell Deadlifts', 'Back', 1, 3, 'One of the best exercises you can perform for you entire posterior chain', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/ytGaGIn3SjE', true, true, true, true ),
+('Barbell Rows', 'Back', 1, 3, 'A great compound back exercise', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/T3N-TO4reLQ', false, true, true, true ),
+('Cable rows', 'Back', 2, 3, 'A standard exercise for improving back strength', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/sP_4vybjVJs', false, true, true, true ),
+('Single Arm Row', 'Back', 2, 3, 'A great exercise for the back muscles', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/EEFHHOCfHgw', false, true, false, false ),
+('Resistence Band Bent Over Rows', 'Back', 1, 2, 'A great exercise for your back muscles.', 'Pull the band towards your chest with your shoulder blades coming inwards while standing on the band and hinged at the hips.', 'https://www.youtube.com/embed/vR9KcvzLqVo', true, true, true, true ),
+('Resistence Band Rows', 'Back', 1, 2, 'A great exercise for the back muscles', 'Watch the video for further instruction', 'https://www.youtube.com/embed/lHuGxZZ09nY', true, true, true, true ),
+('Push Ups', 'Back', 1, 1, 'The classic back and chest exercise', 'To preform a push up, it is recomended that you watch this video explaining the specific details. While this exercise may seem simple, the form is crucial.', 'https://www.youtube.com/embed/-Mbr55h3BeQ', true, true, true, true ),
+('Inverted Rows With Closed Door', 'Back', 1, 1, 'A great exercise for your back muscles', 'Adjusting your position can increase or lower your resistence. Watch video for instructions.', 'https://www.youtube.com/embed/kcjRwGy7UGM', true, true, true, true ),
+('Back Widows', 'Back', 1, 1, 'A great exercise for upper back strength and stabilization.','watch the video for instructions.','https://www.youtube.com/embed/FkrK0yS9dcI', true, true, true, true),
+('Bird-dogs', 'Back', 1, 1, 'A Great exercise for your posterior chain!', 'While on hands and knees, position your body in a 90 degree angle keeping your shoulder and hips at the same level. From this position, raise one arm and opposite leg at the same time and hold for brief pause. Slowly return to position and repeat with opposit arm and leg!', 'https://www.youtube.com/embed/dDMvch2Z9yY', true, true, true, true),
+('Resistence Band Standing Trunk Rotation', 'Core', 3, 2, 'A trunk rotation exercise to hit isolated ab muscles.', 'Watch video for instructions', 'https://www.youtube.com/embed/hf3WAC-N7ao', true, false, false, true ),
+('Resistence Band Woodchops', 'Core', 4, 2, 'A dynamic core exercise using a resistence band.', 'Watch video for instructions.', 'https://www.youtube.com/embed/0eS-xaNv3XI', true, false, false, true ),
+('Planks', 'Core', 1, 1, 'A great exercise for your core', 'Watch video for instructions', 'https://www.youtube.com/embed/pSHjTRCQxIw', true, true, true, true ),
+('Side Planks', 'Core', 4, 1, 'A variation of planks for the obliques', 'Watch video for instructions', 'https://www.youtube.com/embed/K2VljzCC16g', false, true, true, true ),
+('Russian Twist', 'Core', 4, 1, 'A strong core exercise', 'While seated with knees slightly bent, rotate hands from side to side using trunk rotation.', 'https://www.youtube.com/embed/KJbMeSAAZVI', true, true, true, true ),
+('Leg Lift With Hip Raise', 'Core', 2, 1, 'A great exercise to target the lower abs.', 'Watch video for instructions', 'https://www.youtube.com/embed/-SNWwnBJEKM', true, true, true, true ),
+('Alternating Heel Touches', 'Core', 4, 1, 'A great endurance exercise for the core.', 'Watch video for instructions', 'https://www.youtube.com/embed/J9eSDQh3P1o', true, false, false, true ),
+('Seated Scissor Kick', 'Core', 2, 1, 'A great endurance exercise for the core.', 'Watch video for instructions', 'https://www.youtube.com/embed/_qH5YwnWdtc', true, true, true, true ),
+('Heel Touches', 'Core', 4, 1, 'A difficult core exercise', 'Watch video for instructions', 'https://www.youtube.com/embed/1wDaez-3oW8', true, false, false, true ),
+('Plank Step-Up', 'Core', 4, 1, 'A difficult core and upper body exercise', 'Watch video for instructions', 'https://www.youtube.com/embed/L4oFJRDAU4Q', true, true, true, true ),
+('Cross Crunch', 'Core', 3, 1, 'A great diagonal core exercise', 'Watch video for instructions', 'https://www.youtube.com/embed/bEYv_MMlWhs', true, false, false, true ),
+('Bicycle Crunch', 'Core', 1, 1, 'A difficult diagonal core exercise', 'Watch video for instructions', 'https://www.youtube.com/embed/9FGilxCbdz8', true, true, true, true ),
+('Ab Roll-Out', 'Core', 4, 1, 'A rolling exercise to target the core veritcally.', 'Watch video for instructions', 'https://www.youtube.com/embed/m0XGiuXv_74', true, false, true, true ),
+('Super Man', 'Core', 2, 1, 'A great exercise to strengthen the posterior chain and core.', 'Watch video for instructions', 'https://www.youtube.com/embed/z6PJMT2y8GQ', true, true, true, true ),
+('Iso-Reverse Crunch', 'Core', 1, 1, 'A great lower core exercise.', 'Watch video for instructions', 'https://www.youtube.com/embed/S1NY8Pn3PYM', true, false, true, true ),
+('Seated Ab Circles', 'Core', 3, 1, 'A challenging exercise for the core.', 'Watch video for instructions', 'https://www.youtube.com/embed/GOFlI29WqCI', true, false, true, true ),
+('Farmers Carry', 'Postural', 1, 3, 'A great exercise to improve grip strength', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/rt17lmnaLSM', true, true, true, true ),
+('Overhead Farmers Carry', 'Postural', 1, 3, 'an overhead carry exercise to improve grip strength and upper quarter stability.', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/A1qx6m67T9A', false, true, true, true ),
+('Resistence Band Face Pulls', 'Postural', 1, 2, 'A great postural exercise for your upper back and shoulders.', 'Watch video for instructions', 'https://www.youtube.com/embed/eIq5CB9JfKE', false, true, true, true ),
+('Resistence Band High To Low Rows', 'Postural', 2, 2, 'A great postural exercise for your middle back muscles.', 'Watch the video for instructions', 'https://www.youtube.com/embed/NMjPoyI0zyE', false, true, true, true ),
+('Lat Floor Slide', 'Postural', 1, 1, 'A great exercise for lat activation', 'Watch video for instructions.', 'https://www.youtube.com/embed/vPGuYEtbu9A', true, true, true, true ),
+('Bridge (With Or Without Belt)', 'Postural', 1, 1, 'A great exercise for glute activation / isolation', 'Watch video for instructions', 'https://www.youtube.com/embed/wPM8icPu6H8', true, true, true, true ),
+('Prone Y-T-I', 'Postural', 3, 1, 'A great exercise to activate the the small back muscles that are important for posture.', 'Watch video for instructions', 'https://www.youtube.com/embed/yjcoVkZv55E', false, true, true, false ),
+('Bicep Curls', 'Accessory', 3, 3, 'A great bicep exercise', 'Using dumbells or a bar, flex your elbows with the weight, keeping your elbows in the same position.', 'https://www.youtube.com/embed/Nkl8WnH6tDU', false, true, false, false ),
+('Skull crushers', 'Accessory', 3, 3, 'A great exercise for tricep strength', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/QXzhjRnYRT0', false, true, false, false ),
+('Dips', 'Accessory', 1, 1, 'A great tricep exercise', 'Watch video for instructions', 'https://www.youtube.com/embed/0326dy_-CzM', true, true, true, true ),
+('Dumbell Lateral Raises', 'Accessory', 2, 3, 'a great exercise for the deltoid muscle', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/WJm9zA2NY8E', false, true, true, false ),
+('Resistence Band Reverse Fly', 'Accessory', 1, 2, 'A great exercise for your back muscles as well as building good posture.', 'Watch video for instructions.', 'https://www.youtube.com/embed/arw9w79rUPI', false, true, true, true ),
+('Resistence Band Bicep Curls', 'Accessory', 2, 2, 'A great Arm work out', 'Using a band, flex your elbows with the weight, keeping your elbows in the same position.', 'https://www.youtube.com/embed/FVCmVLwRNe0', false, true, true, true ),
+('Resistence Band Overhead Tricep Extensions', 'Accessory', 1, 2, 'A great triceps exercise', 'Extend your arms upwards with your elbow as the fulcrum over your head as you stand on top of the band.', 'https://www.youtube.com/embed/a5rUdCeTtSE',false, true, true, false ),
+('Resistence Band Lateral Raises', 'Accessory', 1, 2, 'A great isolation exercise for your shoulders', 'watch video for instructions', 'https://www.youtube.com/embed/-fjIqkPHz8c', true, true, true, true ),
+('Plank Push Aways', 'Accessory', 1, 1, 'A great exercise for serratus anterior activation', 'Watch video for instructions', 'https://www.youtube.com/embed/tIap-_QHdv0', true, true, true, true ),
+('Closed Door Bicep Curls', 'Accessory', 1, 1, 'Bicep curls using a bed sheet and a closed door!', 'Watch video for instructions.', 'https://www.youtube.com/embed/jR1wy7NtKAo', false, true, false, true ),
+('Closed Door Overhead Tricep Extentsions', 'Accessory', 1, 1, 'Tricep extensions using a bedsheet and a closed door', 'Watch video for instructions.', 'https://www.youtube.com/embed/nnMyjWCv0bg', false, true, false, true ),
+('Sliding Hamstring Curls', 'Accessory', 4, 1, 'An accessory exercise for your hamstrings', 'Curl your legs towards your body', 'https://www.youtube.com/embed/oimeUrwxEo0', false, false, false, true ),
+('Step-Ups', 'Accessory', 2, 1, 'An endurance exercise for the legs', 'Placing one foot on a step, stwep up and down with the other foot.', 'https://www.youtube.com/embed/dQqApCGd5Ss', true, true, false, true ),
+('Side Step-Ups', 'Accessory', 2, 1, 'A step up variation for the glute medius', 'Watch video for instructions', 'https://www.youtube.com/embed/gk-xS6mjIms', true, true, true, true );
+
+
+
+
+
+
+COMMIT;
