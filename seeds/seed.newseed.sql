@@ -23,7 +23,7 @@ VALUES
 ('Barbell Overhead Press', 'Upperbody', 1, 3, 'A great exercise for your shoulders and upper body', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/F3QY5vMz_6I', false, true, true, false ),
 ('Incline Bench Press', 'Upperbody', 2, 3, 'A great exercise for the upper chest muscles', 'Refer to the video for detailed instructions', 'https://www.youtube.com/embed/jPLdzuHckI8', false, true, true, false ),
 ('Resistence Band Chest Fly', 'Upperbody', 2, 2, 'A great exercise for chest muuscle isolation.', 'Watch video for instructions.', 'https://www.youtube.com/embed/yVcEkvgymt8', false, true, true, false ),
-('Power Push Aways', 'Upperbody', 2, 1, 'A great exercise for shoulder muscles', 'Watch video for instructions.', 'https://www.youtube.com/embed/u5FgbAVFEh0', true, true, true, false ),
+('Power Push Aways', 'Upperbody', 1, 1, 'A great exercise for shoulder muscles', 'Watch video for instructions.', 'https://www.youtube.com/embed/u5FgbAVFEh0', true, true, true, false ),
 ('Rotational Pushups', 'Upperbody', 2, 1, 'A great upperbody and core exercise.', 'Watch video for instructions.', 'https://www.youtube.com/embed/SIXuGSOL3_8', false, true, true, true ),
 ('Daimond Pushups', 'Upperbody', 1, 1, 'A push up variation that incorporates more tricep activation', 'Perform push ups with a narrow hand placement forming your fingers into a diamond.', 'https://www.youtube.com/embed/kGhDnFwMY3E', false, true, true, true ),
 ('Pike Push Ups', 'Upperbody', 3, 1, 'An intense upper body exercise.', 'Watch video for instructions.', 'https://www.youtube.com/embed/HT4G-uWcVcc', false, true, true, true ),
