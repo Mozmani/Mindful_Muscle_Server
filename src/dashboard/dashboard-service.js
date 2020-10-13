@@ -1,22 +1,16 @@
+
+// Dashboard service file to assist dashboard and filtered dashboard routes.
 const dashboardService = {
+  //grabs all exercises
+  getAllExercises(db) {
 
-  getAllExercises(db, filters) {
-
-
-    // if (exercise) {
-    //   query.where('exercise', exercise);
-    // }
-    //let { gain_strength } = filters;
     const query = db.select('*').from('exercises');
-    //.where( 'gain_strength', '=', gain_strength );
+    
 
     return query;
 
   },
-
-  getExerciseById(db, id) {
-    return db('exercises').select('*').where({ id }).first();
-  },
+  //grabs a filtered exercise list based on query params
   getFilteredExercise(db, filter, equipVal, priority) {
     
     return db.raw(`select *

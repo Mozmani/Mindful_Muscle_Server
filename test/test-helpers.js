@@ -1188,6 +1188,25 @@ function makeExerciseFixtures(){
   return {testUsers, testExercises, testPlans}
 }
 
+function findMyExercises(freq, exercise, goals, oldList) {
+    let newList = []
+
+    for (let i = 0; i < oldList.length; i++){
+      
+      if (oldList[i].exercise_priority <= freq && (oldList[i].equipment_value === 1 || oldList[i].equipment_value === Number(exercise)) ){
+        
+        
+        for (let [key, value] of Object.entries(oldList[i])) {
+            if(`${key}: ${value}` === goals ){
+              newList.push(oldList[i])
+            }
+          }
+
+      } 
+    }
+    return newList
+  }
+
 module.exports ={
   makeUsersArray,
   cleanTables,
@@ -1196,5 +1215,6 @@ module.exports ={
   makeExercisesArray,
   makeExerciseFixtures,
   seedPlans,
-  seedExercises
+  seedExercises,
+  findMyExercises
 }

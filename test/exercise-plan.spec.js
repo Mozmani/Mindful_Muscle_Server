@@ -137,8 +137,61 @@ describe('exercise plan endpoints!', function () {
 
         });
     });
+    it('responds with 204 and deletes the plan entry', () => {
+      return supertest(app)
+        .delete('/api/adex/148')
+        .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
+        .expect(204)
+        .expect(res => {
+          expect(res.body).to.eql({})
+        });
+    });
+  });
+  context('happy path GET on /:name', () => {
 
+    beforeEach('insert users', () =>
+      helpers.seedUsers(
+        db,
+        testUsers
 
+      )
+    );
+    beforeEach('insert exercises', () =>
+      helpers.seedExercises(
+        db,
+        testExercises
 
+      )
+    );
+
+    beforeEach('insert plans', () =>
+      helpers.seedPlans(
+        db,
+        testPlans
+
+      )
+    );
+    it('responds with 200 and the exercise plans for the user', () => {
+
+      let mockEntry = {
+               
+        exercise_id: 8,
+        frequency: 1,
+        goal: "gain_strength",
+        id: 2,
+        user_id: "DemoMan1"
+      };
+
+      return supertest(app)
+        .get('/api/epex/DemoMan1')
+        .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
+        .expect(200)
+        .expect(res => {
+          expect(res.body[0].id).to.eql(mockEntry.id);
+          expect(res.body[0].user_id).to.eql(mockEntry.user_id);
+          expect(res.body[0].goal).to.eql(mockEntry.goal);
+
+        });
+    });
   });
 })

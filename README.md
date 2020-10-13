@@ -1,26 +1,34 @@
-# Express Boilerplate!
+# Mindful Muscle Server!
 
-This is a boilerplate project used for starting new projects!
+## This is the backend server for The Mindful Muscle Client.
+
+This server handles requests to generate a custom workout routine based on specific parameters. This allows the user to pick how often they want to workout, what goal s they have, as well as what equipment / resources they have available.
 
 ## Set up
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+1. clone this repo to your local machine
+2. Install node dependencies `npm i`
+3. add variables to example.env (NODE_ENV=development, PORT, DATABASE_URL, TEST_DATABASE_URL JWT_SECRET)
+4. set example.env to .env 
+5. create Database to store tables
+6. migrate tables to database `npm run migrate`
+7. seed newseed.sql to seed the exercise table.
+8. run the server and client locally and you are good to go!
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
 
 ## Scripts
 
 Start the application `npm start`
-
 Start nodemon for the application `npm run dev`
-
 Run the tests `npm test`
+Migrate the tables `npm run migrate`
+Migrate Test DB `npm run migrate:test`
 
-## Deploying
+## Special Thanks!
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+Special thanks to Thinkful's software engineering immersion program for inspiring me to create this application.
+
+## About Me
+
+* [GitHub Profile](https://github.com/Mark-The-Dev)
+* [LinkedIn](https://www.linkedin.com/in/mark-marcello-8896481b1)

@@ -2,11 +2,9 @@ const express = require('express');
 const router = express.Router();
 const dashboardService = require('./dashboard-service');
 const xss = require('xss');
-const {requireAuth} = require('../middleware/jwt_auth')
-
 router.use(express.json());
 
-
+//simple function for exercise serialization
 const serializeExercise = (exercise) => ({
   id: exercise.id,
   exercise_name: xss(exercise.exercise_name),
@@ -26,11 +24,8 @@ const serializeExercise = (exercise) => ({
 router
   .route('/')
   .get((req, res, next) => {
-    
-    //console.log('this is here:', req.query);
-    //let {exercise_priority, equipment_value, } = req.query;
-
-    dashboardService.getAllExercises(req.app.get('db'))//, {gain_strength: true})
+    // allows a GET request for all exercises
+    dashboardService.getAllExercises(req.app.get('db'))
     
       .then(exercises => {
         res.json(exercises.map(serializeExercise));
@@ -38,22 +33,7 @@ router
       .catch(next);
   });
 
-router
-  .route('/:id')
-  .all(requireAuth)
-  .all((req, res, next) => {
-    dashboardService.getExerciseById(req.app.get('db'), req.params.id)
-      .then(exercise => {
-        if (!exercise) {
-          return express.status(404).json({
-            error: { message: `Exercise doesn't exist` }
-          });
-        }
-        res.exercise = exercise;
-        next();
-      })
-      .catch(next)
-  })
+
 
 
 module.exports = router;

@@ -23,9 +23,10 @@ app.use(helmet());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.send('Mindful Muscle Server');
 });
 
+//routes for Server
 app.use('/api/exercises', dashboardRoutes);
 app.use('/api/auth', authRouter)
 app.use('/api/adex', exercisePlanRouter)
@@ -33,6 +34,7 @@ app.use('/api/user', userRouter)
 app.use('/api/epex', epRouter)
 app.use('/api/filter', filteredDash)
 
+//Error handler
 app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === 'production') {
