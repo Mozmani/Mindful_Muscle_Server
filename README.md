@@ -13,7 +13,8 @@ This server handles requests to generate a custom workout routine based on speci
 5. create Database to store tables
 6. migrate tables to database `npm run migrate`
 7. seed newseed.sql to seed the exercise table.
-8. run the server and client locally and you are good to go!
+8. download Mindful Muscle client and follow set up instructions! 
+9. run the server and client locally and you are good to go!
 
 
 ## Scripts
