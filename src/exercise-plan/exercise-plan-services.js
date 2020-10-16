@@ -28,7 +28,7 @@ const exercisePlanService = {
     return db.raw(`select e.id, e.exercise_name, e.exercise_description, e.instructions, e.link, e.target, ep.frequency, ep.user_id, ep.goal
     from exercises e 
     join exercise_plan ep on e.id = ep.exercise_id
-    where ep.user_id like '%${name}%'
+    where ep.user_id like '${name}'
     order by e.id; `)
   }
 
