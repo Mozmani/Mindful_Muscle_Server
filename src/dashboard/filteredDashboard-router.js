@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const dashboardService = require('./dashboard-service');
 router.use(express.json());
-const {requireAuth} = require('../middleware/jwt_auth')
+const {requireAuth} = require('../middleware/jwt_auth');
 
 
 // Filtered Dashboard Route

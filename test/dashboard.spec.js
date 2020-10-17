@@ -1,15 +1,15 @@
 const knex = require('knex');
 const app = require('../src/app');
 const helpers = require('./test-helpers');
-const bcrypt = require('bcryptjs');
+
 
 
 describe('Dashboard endpoints!', function () {
 
   let db;
 
-  const { testUsers, testPlans, testExercises } = helpers.makeExerciseFixtures()
-  const testUser = testUsers[0]
+  const { testUsers, testPlans, testExercises } = helpers.makeExerciseFixtures();
+  
 
   before('make knex instance', () => {
     db = knex({
@@ -19,11 +19,11 @@ describe('Dashboard endpoints!', function () {
     app.set('db', db);
   });
 
-  after('disconnect from db', () => db.destroy())
+  after('disconnect from db', () => db.destroy());
 
-  before('cleanup', () => helpers.cleanTables(db))
+  before('cleanup', () => helpers.cleanTables(db));
 
-  afterEach('cleanup', () => helpers.cleanTables(db))
+  afterEach('cleanup', () => helpers.cleanTables(db));
 
   context('dashboard endpoint happy paths, GET /, GET /:id, GET /filter', () => {
     beforeEach('insert users', () =>

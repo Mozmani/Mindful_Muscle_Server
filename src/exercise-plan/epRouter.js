@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const exercisePlanServices = require('./exercise-plan-services')
+const exercisePlanServices = require('./exercise-plan-services');
 router.use(express.json());
-const {requireAuth} = require('../middleware/jwt_auth')
+const {requireAuth} = require('../middleware/jwt_auth');
 
 //Route for specific user exercise plan
 router
@@ -18,6 +18,6 @@ router
         res.json(exercise.rows);
       })
       .catch(next);
-  })
+  });
 
 module.exports = router; 

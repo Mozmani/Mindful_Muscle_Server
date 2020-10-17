@@ -14,7 +14,7 @@ const AuthService = {
   },
   // Compares PW hash in DB to hash of current password entry
   comparePasswords(password, hash) {
-    return bcrypt.compare(password, hash)
+    return bcrypt.compare(password, hash);
   },
   //Simple JSON webtoken creation service
   createJwt(subject, payload) {

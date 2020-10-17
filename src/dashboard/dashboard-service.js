@@ -20,6 +20,6 @@ const dashboardService = {
     and e.exercise_priority <= ${priority}; `);
   }
 
-}
+};
 
 module.exports = dashboardService;

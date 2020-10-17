@@ -29,7 +29,7 @@ const exercisePlanService = {
     from exercises e 
     join exercise_plan ep on e.id = ep.exercise_id
     where ep.user_id like '${name}'
-    order by e.id; `)
+    order by e.id; `);
   }
 
 };

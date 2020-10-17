@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const exercisePlanServices = require('./exercise-plan-services')
+const exercisePlanServices = require('./exercise-plan-services');
 router.use(express.json());
-const {requireAuth} = require('../middleware/jwt_auth')
+const {requireAuth} = require('../middleware/jwt_auth');
 
 //Route for Exercise Plans
 router
@@ -18,9 +18,9 @@ router
   })
   .post((req, res) => {
     //allows for posting in exercise plans
-    let { user_id, exercise_id, frequency, goal } = req.body
+    let { user_id, exercise_id, frequency, goal } = req.body;
     if (!user_id || !exercise_id || !frequency || !goal) {
-      return res.status(400).send('Invalid Request, You need an exercise_id, user_id, a goal and a frequency')
+      return res.status(400).send('Invalid Request, You need an exercise_id, user_id, a goal and a frequency');
     }
     let newExercise = {
       user_id,
@@ -32,9 +32,9 @@ router
     exercisePlanServices.addExercises(req.app.get('db'), newExercise)
       .then(exercise => {
         res.status(201)
-          .json(exercise)
-      })
-  })
+          .json(exercise);
+      });
+  });
 router
   .route('/:id')
   .all(requireAuth)
@@ -44,14 +44,14 @@ router
       .then((exercise) => {
         if (!exercise) {
           return res.status(404).json({
-            error: { message: `Exercise doesn't exist` }
+            error: { message: 'Exercise doesn\'t exist' }
           });
         }
         res.exercise = exercise;
         next();
 
       })
-      .catch(next)
+      .catch(next);
   })
   // lets an authenticated user grab an exercise from their plan
   .get((req, res) => {
@@ -61,7 +61,7 @@ router
   .delete((req, res, next) => {
     exercisePlanServices.deleteExercise(req.app.get('db'), req.params.id)
       .then(() => res.status(204).end())
-      .catch(next)
+      .catch(next);
   });
 
 
